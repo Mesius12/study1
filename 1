@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	int a, b;
+	bool f1 = 0;
+	cout << "Вводите целые числа для проверки." << endl;
+	while (f1 != 1) {
+		if (!(cin >> a >> b)) {
+			cout << "Вводите только целые числа!" << endl;
+		}
+		else {
+			f1 = 1;
+		}
+	}
+	if (a > b) {
+		cout << "БОЛЬШЕ" << endl;
+	}
+	else if (a == b) {
+		cout << "РАВНО" << endl;
+	}
+	else if (a < b) {
+		cout << "МЕНЬШЕ" << endl;
+	}
+	return 0;
+}

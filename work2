@@ -51,3 +51,32 @@ int main() {
 	}
 	return 0;
 }
+--WORK 2 #3 --
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	float a, x, w;
+	bool f1 = 0;
+	while (f1 != 1) {
+		cout << "введите свои значения для a, x" << endl;
+		if (!(cin >> a >> x)) {
+			cout << "Вводите только числа для a, x!" << endl;
+			cin.clear();
+			cin.ignore();
+		}
+		else {
+			f1 = 1;
+		}
+	}
+	if (abs(x) < 1) {
+		w = a * log10(abs(x));
+	}
+	else if (abs(x) >= 1) {
+		w = sqrt(a - (x * x));
+	}
+	cout << "ваш ответ" << w << endl;
+	return 0;
+}

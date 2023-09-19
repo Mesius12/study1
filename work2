@@ -1,0 +1,53 @@
+-- WORK 2 #1 --
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	float h, R, r, l, V, S;
+	float pi = 3.14;
+	bool f1 = 0;
+	while (f1 != 1) {
+		cout << "Вводите значения для определения объёма и полн.п.усеч. конуса. 1. R (радиус нижнего осн.) 2. h (высота), 3. r (радиус верхнего осн.), 4. l (длина образующей)" << endl;
+		if (!(cin >> R >> h >> r >> l)) {
+			cout << "Вводите только числа для определения!" << endl;
+			cin.clear();
+			cin.ignore();
+		}
+		else {
+			f1 = 1;
+		}
+	}
+	V = (static_cast<float>(1) / 3 * pi * h * (R * R + R * r + r * r));
+	S = (pi * (R * R + (R + r) * l + r * r));
+	cout << "объём усеч. конуса =" << V << endl;
+	cout << "полная поверхность усеч. конуса =" << S << endl;
+	return 0;
+}
+-- WORK 2 #2 --
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+  setlocale(LC_ALL, "rus");
+	float N, i;
+	bool f1 = 0;
+	while (f1 != 1) {
+		cout << "Введите число N" << endl;
+		if (!(cin >> N)) {
+			cout << "Вводите только числа для N!" << endl;
+			cin.clear();
+			cin.ignore();
+
+		}
+		else {
+			f1 = 1;
+		}
+	}
+	for (i = N; i <= N + 9; i++) {
+		cout << i << endl;
+	}
+	return 0;
+}

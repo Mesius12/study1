@@ -104,3 +104,19 @@ int main() {
 	cout << "ваш ответ" << z << endl;
 	return 0;
 }
+--WORK 2 #5 --
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	float x = -4;
+	float y;
+	while (x < 4) {
+		y = (x * x - 2 * x + 2) / (x - 1);
+		cout << y << endl;
+		x += 0.5;
+	}
+	return 0;
+}
+// GATOVA =)

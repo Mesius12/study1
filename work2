@@ -58,7 +58,7 @@ using namespace std;
 
 int main() {
 	setlocale(LC_ALL, "rus");
-	float a, x, w;
+	float a=0, x=0, w=0,b=0,c;
 	bool f1 = 0;
 	while (f1 != 1) {
 		cout << "введите свои значения для a, x" << endl;
@@ -72,14 +72,26 @@ int main() {
 		}
 	}
 	if (abs(x) < 1) {
+		if (x <= 0) {
+			cout << "одз нарушено" << endl;
+			return 0;
+		}
 		w = a * log10(abs(x));
+		cout << "ваш ответ" << w << endl;
 	}
 	else if (abs(x) >= 1) {
-		w = sqrt(a - (x * x));
+		c = abs(a - (x * x));
+		if (c< 0) {
+			cout << "одз нарушено" << endl;
+			return 0;
+		}
+		b = c;
+		w = sqrt(b);
+		cout << "ваш ответ" << ""  << w << endl;
 	}
-	cout << "ваш ответ" << w << endl;
 	return 0;
 }
+
 --WORK 2 #3 --
 #include<iostream>
 #include<cmath>

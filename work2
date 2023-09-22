@@ -110,16 +110,19 @@ int main() {
 using namespace std;
 
 int main() {
+	setlocale(LC_ALL, "rus");
+
 	float x = -4;
 	float y;
 	while (x < 4) {
 		if (x == 1) {
-		cout << "Нельзя делить на ноль!" << endl;
+			cout << "Нельзя делить на ноль!" << endl;
+			x += 0.5;
 		}
 		else {
-		y = (x * x - 2 * x + 2) / (x - 1);
-		cout << y << endl;
-		x += 0.5;
+			y = (x * x - 2 * x + 2) / (x - 1);
+			cout << y << endl;
+			x += 0.5;
 		}
 	}
 	return 0;

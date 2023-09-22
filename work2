@@ -32,30 +32,39 @@ int main() {
 	return 0;
 }
 -- WORK 2 #4 --
-#include<iostream>
+#inclide<iostream>
 #include<cmath>
 using namespace std;
 
 int main() {
   setlocale(LC_ALL, "rus");
-	float N, i;
-	bool f1 = 0;
-	while (f1 != 1) {
-		cout << "Введите число N" << endl;
-		if (!(cin >> N)) {
-			cout << "Вводите только числа для N!" << endl;
-			cin.clear();
-			cin.ignore();
+  int N, i;
+  bool f1 = 0;
+  while (f1 != 1) {
+    cout << "Введите число N" << endl;
+    if (!(cin >> N)) {
+      if (N < 0 or N == 0) {
+        cout << "Вводите только положительные числа больше 0" << endl;
+        cin.clear();
+        cin.ignore();
+      }
+      cout << "Вводите только числа для N!" << endl;
+      cin.clear();
+      cin.ignore();
 
-		}
-		else {
-			f1 = 1;
-		}
-	}
-	for (i = N; i <= N + 10; i++) {
-		cout << i << endl;
-	}
-	return 0;
+    }
+    else {
+      f1 = 1;
+    }
+  }
+  for (i = N; i <= N + 10; i++) {
+    if (N != int(N)) {
+      N = int(N) + 1;
+      cout << i << endl;
+    }
+    cout << i << endl;
+  }
+  return 0;
 }
 --WORK 2 #2 --
 #include<iostream>

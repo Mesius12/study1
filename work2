@@ -25,7 +25,7 @@ int main() {
 	cout << "полная поверхность усеч. конуса =" << S << endl;
 	return 0;
 }
--- WORK 2 #2 --
+-- WORK 2 #4 --
 #include<iostream>
 #include<cmath>
 using namespace std;
@@ -51,7 +51,7 @@ int main() {
 	}
 	return 0;
 }
---WORK 2 #3 --
+--WORK 2 #2 --
 #include<iostream>
 #include<cmath>
 using namespace std;
@@ -80,7 +80,7 @@ int main() {
 	cout << "ваш ответ" << w << endl;
 	return 0;
 }
---WORK 2 #4 --
+--WORK 2 #3 --
 #include<iostream>
 #include<cmath>
 using namespace std;

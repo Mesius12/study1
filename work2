@@ -46,7 +46,7 @@ int main() {
 			f1 = 1;
 		}
 	}
-	for (i = N; i <= N + 9; i++) {
+	for (i = N; i <= N + 10; i++) {
 		cout << i << endl;
 	}
 	return 0;

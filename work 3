@@ -1,1 +1,29 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
 
+int main() {
+	setlocale(LC_ALL, "rus");
+	float S=0, n, m, p=0, r;
+	bool f1 = 0;
+	cout << "Вводите числа для S, n, p" << endl;
+	while (f1 != 1) {
+		if (!(cin >> S >> n >> p)) {
+			if (S < 0 or n < 0 or p < 0) {
+				cout << "Числа должны быть больше нуля!" << endl;
+				cin.clear();
+				cin.ignore();
+			}
+			cout << "Вводите только целые числа!" << endl;
+			cin.clear();
+			cin.ignore();
+		}
+		else {
+			f1 = 1;
+		}
+	}
+	r = p / 100;
+	m = ((S * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1)));
+	cout << m << endl;
+	return 0;
+}

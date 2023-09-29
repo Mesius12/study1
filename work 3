@@ -83,3 +83,25 @@ int main() {
 	return 0;
 }
 -WORK 3 #4----
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	int i;
+	string alpha, beta;
+	ofstream V("vvod.txt");
+	V << "авыаывады123456789"; // создаем текст
+	V.close();
+	ifstream C("vvod.txt"); // выводим
+	getline(C, alpha);
+	C.close();
+	for (i = 0; i < alpha.size(); i++) { // считаем 
+		if (alpha[i] >= '0' and alpha[i] <= '10') {
+			cout << alpha[i];
+		}
+	}
+	return 0;
+}

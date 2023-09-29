@@ -61,3 +61,25 @@ int main() {
 	return 0;
 }
 --work 3 #3 -- 
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int main() {
+
+
+	ofstream a("filename.txt");
+	a << "123213adasd132123fafAAAFFFDDD21312";
+	a.close();
+
+	string b;
+
+	ifstream bc("filename.txt");
+	while (getline(bc, b)) {
+		cout << b;
+	}
+	bc.close();
+	return 0;
+}
+-WORK 3 #4----

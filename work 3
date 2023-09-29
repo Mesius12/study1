@@ -9,8 +9,8 @@ int main() {
 	cout << "Вводите числа для S, n, p" << endl;
 	while (f1 != 1) {
 		if (!(cin >> S >> n >> p)) {
-			if (S < 0 or n < 0 or p < 0) {
-				cout << "Числа должны быть больше нуля!" << endl;
+			if (S < 0 or n < 0 or p < 0 or n >= 15 or p >= 100 or S >= 1000) {
+				cout << "Условия нереалистичны!" << endl;
 				cin.clear();
 				cin.ignore();
 			}

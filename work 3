@@ -27,7 +27,6 @@ int main() {
 	cout << m << endl;
 	return 0;
 }
---WORK 3 #2 --
 #include<iostream>
 #include<cmath>
 using namespace std;
@@ -39,7 +38,7 @@ int main() {
 	cout << "Вводите числа для S, m, n" << endl;
 	while (f1 != 1) {
 		if (!(cin >> S >> m >> n)) {
-			if (S < 0 or m < 0 or n < 0 or n >= 15 or p >= 100 or S >= 1000) {
+			if (S < 0 or m < 0 or n < 0) {
 				cout << "Вводите только числа!" << endl;
 				cin.clear();
 				cin.ignore();
@@ -54,12 +53,15 @@ int main() {
 	}
 	for (float r = 0; r <= 100; r = r + 0.01) {
 		p = r * 100;
-		if (m == ((S * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1)))) {
+		double m1 = ((S * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1)));
+		if (m - m1<1) {
 			cout << p << endl;
-		 }
+			break;
+		}
 	}
 	return 0;
 }
+
 --work 3 #3 -- 
 #include<iostream>
 #include<fstream>

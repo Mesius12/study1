@@ -1,0 +1,154 @@
+//#include <iostream>
+//#include <fstream>
+//#include <string>
+//using namespace std;
+//
+//int main() {
+//	setlocale(LC_ALL, "rus");
+//	ofstream filik("1.txt");
+//	if (!filik) {
+//		cout << "Открытие не удалось" << endl;
+//		return 1;
+//	}
+//	double a, b, c, d, e, f, g, h, k, l;
+//	bool f1 = 0;
+//	cout << "Вводите свои 10 чисел." << endl;
+//	while (f1 != 1) {
+//		if (!(cin >> a >> b >> c >> d >> e >> f >> g >> h >> k >> l)) {
+//			cout << "Вводите только целые числа" << endl;
+//			cin.ignore();
+//			cin.clear();
+//		}
+//		else {
+//			f1 = 1;
+//		}
+//	}
+//	double nums[10] = { a, b, c, d, e, f, g, h, k, l };
+//	for (int i = 0; i < 10; i++) {
+//		filik << nums[i] << endl;
+//	}
+//	filik.close();
+//	ifstream file("1.txt");
+//	if (!file) {
+//		cout << "не удалось открыть файлик :(" << endl;
+//		return 1;
+//	}
+//	double summary = 0;
+//	double numss;
+//	while (file >> numss) {
+//		cout << numss << endl;
+//		summary += numss;
+//	}
+//	file.close();
+//	cout << "summary = " << summary << endl;
+//}
+
+//// WORK 4 #2
+//#include<iostream>
+//#include<fstream>
+//using namespace std;
+//
+//void schet() {
+//	double a;
+//	bool f1 = 0;
+//	cout << "Введите свой х (P.S х < 0 - '-1', x == 0 - '0', x > 1 - '1')" << endl;
+//	while (f1 != 1) {
+//		if (!(cin >> a)) {
+//			cout << "Вводите нормальные числа." << endl;
+//			cin.ignore();
+//			cin.clear();
+//		}
+//		else {
+//			f1 = 1;
+//		}
+//	}
+//	if (a > 1) {
+//		cout << "1" << endl;
+//	}
+//	if (a == 0) {
+//		cout << "0" << endl;
+//	}
+//	if (a < 0) {
+//		cout << "-1" << endl;
+//	}
+//}
+//
+//
+//
+//int main() {
+//	setlocale(LC_ALL, "rus");
+//	schet();
+//}
+
+////WORK 4#3
+//#include <iostream>
+//#include <fstream>
+//#include <string>
+//#include <cmath>
+//using namespace std;
+//
+//double Spriam(double a, double c) {
+//	return a * c;
+//}
+//double Scircle(double r, double pi) {
+//	return pi * pow(r, 2);
+//}
+//double Striangle(double h, double d) {
+//	return 1.0/2.0 * (h * d);
+//}
+//
+//
+//int main() {
+//	setlocale(LC_ALL, "rus");
+//	int vibor;
+//	double a, c, r, d, h;
+//	double pi = 3.14;
+//	cout << "Пожалуйста выберите номер фигуры для нахождения площади:" << endl;
+//	cout << "1. Прямоугольник" << endl;
+//	cout << "2. Треугольник" << endl;
+//	cout << "3. Круг" << endl;
+//	cin >> vibor;
+//	switch (vibor) {
+//	case 1:
+//		cout << "Введите длину и ширину прямоугольника" << endl;
+//		cin >> a >> c;
+//		if (a < 0 or c < 0) {
+//			cout << "Вы ввели неправильные значения." << endl;
+//			break;
+//		}
+//		else {
+//
+//			cout << "Площадь - " << Spriam(a, c) << endl;
+//			break;
+//		}
+//	case 2:
+//		cout << "Введите высоту и основание треугольника." << endl;
+//		cin >> h >> d;
+//		if (h < 0 or d < 0) {
+//			cout << "Вы ввели неправильные значения." << endl;
+//			break;
+//		}
+//		else {
+//
+//			cout << "Площадь - " << Striangle(h, d) << endl;
+//			break;
+//		}
+//	case 3:
+//		cout << "Введите радиус круга. (pi по умолчанию 3.14)" << endl;
+//		cin >> r;
+//		if (r < 0) {
+//			cout << "Вы ввели неправильные значения." << endl;
+//			break;
+//		}
+//		else {
+//
+//			cout << "Площадь - " << Scircle(r, pi) << endl;
+//			break;
+//		}
+//	default:
+//		cout << "Введите корректное значение" << endl;
+//		break;
+//	}
+//	return 0;
+//}
+

@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	const int N = 10;
+	bool f1 = 0;
+	// переменные заполняемые пользователем
+	int b, c, d, e, f, k, l, m, o, x;
+	// защита ввода
+	cout << "Вводите свои 10 чисел для сортировки: " << endl;
+	while (f1 != 1) {
+		if (!(cin >> b >> c >> d >> e >> f >> k >> l >> m >> o >> x)) {
+			cout << "Вводите только целые числа для сортировки!" << endl;
+			cin.ignore();
+			cin.clear();
+		}
+		else {
+			f1 = 1;
+		}
+	}
+	int a[N] = { b, c, d, e, f, k, l, m, o, x }; // Массив для записи чисел, нуждающихся в сортировке
+
+	int minimum = 0; // минимальное значение
+	int bufer = 0; // обмен значений внутри массива
+
+	for (int i = 0; i < N; i++) {
+		minimum = i;
+		// поиск минимального числа внутри массива
+		for (int j = i; j < N; j++) 
+			minimum = (a[j] < a[minimum]) ? j : minimum;
+			if (i != minimum) {
+				bufer = a[i];
+				a[i] = a[minimum];
+				a[minimum] = bufer;
+			}
+	}
+	for (int i = 0; i < N; i++) // вывод отсортированного массива
+	cout << a[i] << '\t';
+	cout << endl;
+}
+

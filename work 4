@@ -152,3 +152,395 @@
 //	return 0;
 //}
 
+// WORK 4#4
+//#include <iostream>
+//using namespace std;
+//
+//int main() {
+//	for (int i = 0; i < 10; i++) {
+//		if (i <= 4) {
+//			for (int j = 0; j < 33; j++) {
+//				if (j <= 8) {
+//					cout << "* ";
+//				}
+//				else {
+//					cout << "_";
+//				}
+//			}
+//			cout << "" << endl;
+//		}
+//		else {
+//			for (int j = 0; j < 33 + 9; j++) {
+//				cout << "_";
+//			}
+//			cout << "" << endl;
+//		}
+//	}
+//}
+// WORK 4#5
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    const int width = 80;
+    const int height = 20;
+    const double amplitude = height / 2.0;
+    const double frequency = 0.1;
+
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            // Считаем значение синусоиды в точке x
+            double value = amplitude * sin(frequency * x);
+            // Проверяем, находится ли текущий пиксель на средней линии оси x
+            if (y == height / 2) {
+                cout << "-";
+            }
+            // Рисуем осевые + на краях средней линии
+            else if ((x == 0 and y == amplitude) or (x == width - 1 and y == amplitude)) {
+                cout << "+";
+            }
+            // Вычисляем, где должны находиться экстремумы
+            else if (x == static_cast<int>((3.14159 / 2 + 3.14159 * floor(frequency * x / 3.14159)) / frequency) or
+                x == static_cast<int>((3 * 3.14159 / 2 + 3.14159 * floor(frequency * x / 3.14159)) / frequency)) {
+                cout << "|"; // E - обозначение экстремума
+            }
+            // Проверяем, находится ли текущий пиксель на графике функции
+            else {
+                // И если да, то рисуем звездочку
+                cout << (y == static_cast<int>(amplitude - value) ? "*" : " ");
+            }
+        }
+        // Перевод строки после завершения ряда
+        cout << endl;
+    }
+
+    return 0;
+}
+
+// WORK 4#6
+
+//#include <iostream>
+//#include <cmath>
+//#include <string>
+//#include <algorithm>
+//using namespace std;
+//
+//
+//int Chisla(char romanNumeral) {
+//    switch (romanNumeral) {
+//    case 'I':
+//        return 1;
+//    case 'V':
+//        return 5;
+//    case 'X':
+//        return 10;
+//    case 'L':
+//        return 50;
+//    case 'C':
+//        return 100;
+//    case 'D':
+//        return 500;
+//    case 'M':
+//        return 1000;
+//    default:
+//        return 0;
+//    }
+//}
+//
+//int main() {
+//    setlocale(LC_ALL, "rus");
+//    string romanNumeral;
+//    cout << "Введите ваше римское число: ";
+//    cin >> romanNumeral;
+//    string numbers[] = { "IM", "ID", "IC","IL", "VX", "VL", "VC","VD", "VM", "XD", "XM", "LC","LD", "LM", "DM", "VV","LL", "DD", "IIII", "XXXX",
+//        "CCCC", "MMMM" };
+//    auto it = find(begin(numbers), end(numbers), romanNumeral);
+//
+//    bool found = false;
+//
+//    for (const string& syllable : numbers) {
+//        size_t position = romanNumeral.find(syllable);
+//        if (position != string::npos) {
+//            found = true;
+//            break;
+//        }
+//    }
+//    if (found) {
+//        cout << "Такого числа не существует" << endl;
+//    }
+//    else {
+//        int decimalNum = 0;
+//        for (int i = 0; i < romanNumeral.length(); i++) {
+//            if (Chisla(romanNumeral[i]) == 0) {
+//                cout << "Нет такого числа!";
+//                exit(0);
+//            }
+//            int currentNum = Chisla(romanNumeral[i]);
+//            int nextNum = (i + 1 < romanNumeral.length()) ? Chisla(romanNumeral[i + 1]) : 0;
+//
+//            if (currentNum >= nextNum) {
+//                decimalNum += currentNum;
+//            }
+//            else {
+//                decimalNum -= currentNum;
+//            }
+//        }
+//        cout << "Десятичное представление: " << decimalNum << endl;
+//    }
+//
+//    return 0;
+//}
+
+//// WORK 4#7
+
+////work 4#7
+//
+//#include <math.h>
+//#include <string>
+//#include <algorithm>
+//using namespace std;
+//
+//int main() {
+//	setlocale(LC_ALL, "rus");
+//	int m, b, c, D;
+//	int s = 0;
+//	bool a;
+//	cout << "Выберите вариант(0 - первый вариант, 1 - торой вариант) ";
+//	if (!(cin >> a)) {
+//		cout << "неверный символ" << endl;
+//		return 0;
+//	}
+//	if (a == 1) {
+//		m = 37;
+//		b = 3;
+//		c = 64;
+//		for (int i = 0; i < 10; i++) {
+//			float D = (m * s + b) % c;
+//			s = D;
+//			cout << D << endl;
+//
+//		}
+//	}
+//	else {
+//		m = 25137;
+//		b = 13849;
+//		c = 65537;
+//		for (int i = 0; i < 10; i++) {
+//			float D = (m * s + b) % c;
+//			s = D;
+//			cout << D << endl;
+//
+//		}
+//	}
+//}
+
+//// WORK 4#8
+
+////work 4#8
+//#include<iostream>
+//#include<fstream>
+//#include<cmath>
+//#include<string>
+//
+//using namespace std;
+//
+//int main() {
+//
+//    const int seller_string = 3;
+//    const int product_column = 4;
+//
+//    const int price_string = 4;
+//    const int commission_column = 2;
+//
+//    double table_A[seller_string][product_column]{ {5, 2, 0, 10}, {3, 5, 2, 5}, {20, 0, 0, 0} };
+//    double table_B[price_string][commission_column]{ {1.20, 0.50}, {2.80, 0.40}, {5.00, 1.00}, {2.00, 1.50} };
+//
+//
+//    double multiplication_result[seller_string][commission_column] = {};
+//    for (int i = 0; i < seller_string; i++) {
+//        for (int j = 0; j < commission_column; j++) {
+//            for (int k = 0; k < product_column; k++) {
+//                multiplication_result[i][j] += table_A[i][k] * table_B[k][j];
+//            }
+//        }
+//    }
+//    if (product_column != price_string) {
+//        cout << "error \n"; //проверка на возможность перемножения матриц
+//        return 1;
+//    }
+//
+//
+//    double total_sales = 0;
+//    double total_commission = 0;
+//    double max_sales = multiplication_result[0][0];
+//    double min_sales = multiplication_result[0][0];
+//    double max_commission = multiplication_result[0][1];
+//    double min_commission = multiplication_result[0][1];
+//
+//    int max_sales_seller = 0;
+//    int min_sales_seller = 0;
+//    int max_commission_seller = 0;
+//    int min_commission_seller = 0;
+//
+//    for (int i = 0; i < seller_string; i++) {
+//        total_sales += multiplication_result[i][0];
+//        total_commission += multiplication_result[i][1];
+//
+//        if (multiplication_result[i][0] > max_sales) {
+//            max_sales = multiplication_result[i][0];
+//            max_sales_seller = i;
+//        }
+//        if (multiplication_result[i][0] < min_sales) {
+//            min_sales = multiplication_result[i][0];
+//            min_sales_seller = i;
+//        }
+//
+//        if (multiplication_result[i][1] > max_commission) {
+//            max_commission = multiplication_result[i][1];
+//            max_commission_seller = i;
+//        }
+//        if (multiplication_result[i][1] < min_commission) {
+//            min_commission = multiplication_result[i][1];
+//            min_commission_seller = i;
+//        }
+//    }
+//    for (int i = 0; i < seller_string; i++) {
+//        for (int j = 0; j < commission_column; j++) {
+//            cout << multiplication_result[i][j] << " ";
+//        }
+//        cout << "\n";
+//    }
+//    cout << endl;
+//
+//    cout << "1) " << max_sales << min_sales << endl;
+//    cout << "2)" << max_commission << min_commission << endl;
+//    cout << "3)" << total_sales << endl;
+//    cout << "4)" << total_commission << endl;
+//    cout << "5)" << total_sales + total_commission << endl << endl;
+//
+//
+//}
+
+//// WORK 4#9
+//
+//#include <iostream>
+//#include <cmath>
+//#include <string>
+//#include <fstream>
+//using namespace std;
+//
+//string HexR(int HexNum) {
+//	switch (HexNum) {
+//	case 0: return "0";
+//	case 1: return "1";
+//	case 2: return "2";
+//	case 3: return "3";
+//	case 4: return "4";
+//	case 5: return "5";
+//	case 6: return "6";
+//	case 7: return "7";
+//	case 8: return "8";
+//	case 9: return "9";
+//	case 10: return "A";
+//	case 11: return "B";
+//	case 12: return "C";
+//	case 13: return "D";
+//	case 14: return "E";
+//	case 15: return "F";
+//	}
+//}
+//
+//int Hex(char HexNum) {
+//	switch (HexNum) {
+//	case '0': return 0;
+//	case '1': return 1;
+//	case '2': return 2;
+//	case '3': return 3;
+//	case '4': return 4;
+//	case '5': return 5;
+//	case '6': return 6;
+//	case '7': return 7;
+//	case '8': return 8;
+//	case '9': return 9;
+//	case 'A': return 10;
+//	case 'B': return 11;
+//	case 'C': return 12;
+//	case 'D': return 13;
+//	case 'E': return 14;
+//	case 'F': return 15;
+//	default: return -1;
+//	}
+//}
+//
+//string decToAny(int decim, int a) {
+//	string octal = "";
+//	while (decim > 0) {
+//		string rem = HexR(decim % a);
+//		octal = rem + octal;
+//		decim /= a;
+//	}
+//	return octal;
+//}
+//
+//int main() {
+//	setlocale(LC_ALL, "rus");
+//	string HexNum;
+//	string HexR;
+//	int num;
+//	int syst;
+//	bool schet = 0;
+//	bool f1 = 0;
+//
+//	cout << "Введите число: ";
+//	cin >> HexNum;
+//
+//
+//
+//	cout << "Введите систему счисления вашего числа: ";
+//	cin >> syst;
+//	if (syst > 16) {
+//		cout << "Вы ввели некорректное значение!" << endl;
+//		return 0;
+//	}
+//
+//
+//	cout << "Введите систему счисления для перевода (от 2 до 16): ";
+//	cin >> num;
+//	if (num > 16) {
+//		cout << "Вы ввели некорректное значение!" << endl;
+//		return 0;
+//	}
+//
+//	if (syst >= 10) {
+//		HexNum == HexR;
+//		int decim = 0;
+//		for (int i = 0; i < HexNum.length(); i++) {
+//			int value = Hex(HexNum[i]);
+//			if (value == -1) {
+//				cout << "Некорректное число." << endl;
+//				return 0;
+//			}
+//			decim = decim * syst + value;
+//		}
+//		string result = decToAny(decim, num);
+//		cout << "Число " << HexNum << " в системе счисления с основанием " << num << " равно " << result << "." << endl;
+//	}
+//
+//	int decim = 0;
+//
+//	for (int i = 0; i < HexNum.length(); i++) {
+//		int value = Hex(HexNum[i]);
+//		if (value == -1) {
+//			cout << "Некорректное число." << endl;
+//			return 0;
+//		}
+//		decim = decim * syst + value;
+//	}
+//
+//	string result = decToAny(decim, num);
+//	cout << "Число " << HexNum << " в системе счисления с основанием " << num << " равно " << result << "." << endl;
+//
+//	return 0;
+//}

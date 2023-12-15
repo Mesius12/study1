@@ -1,1 +1,48 @@
-/
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void first(int a, int b) {
+	if (a != 0 and b != 0) {
+		if (a > b) {
+			a = a % b;
+			first(a, b);
+		}
+		else {
+			b = b % a;
+			first(a, b);
+		}
+	}
+	else {
+		cout << "делением " << a + b << endl;
+	}
+}
+
+void second(int a, int b) {
+	if (a != b) {
+		if (a > b) {
+			a = a - b;
+			second(a, b);
+		}
+		else {
+			b = b - a;
+			second(a, b);
+		}
+	}
+	else {
+		cout << "вычитанием " << a << endl;
+	}
+}
+
+int main() {
+	setlocale(LC_ALL, "RUS");
+	cout << "Введите два числа ";
+	int a, b;
+	if (!(cin >> a >> b) or a < 0 or b < 0) {
+		cout << "Ошибка ввода (Вводите только целые значения)";
+		return 0;
+	}
+	first(a, b);
+	second(a, b);
+	return 0;
+}

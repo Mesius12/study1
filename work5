@@ -208,3 +208,34 @@ int main() {
         }
     }
 }
+
+//work 5# 4.30
+#include <iostream>
+#include <string>
+#include <set>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "rus");
+    int input;
+    bool f = 0;
+    cout << "Введите последовательность цифр: ";
+    if (!(cin >> input)) {
+        cout << "Вводите только целые положительные значения!" << endl;
+        return 0;
+    }
+    string input1 = to_string(input);
+    
+
+    set<char> unique_digits;
+    for (char c : input1) {
+        if (isdigit(c)) {
+            unique_digits.insert(c);
+        }
+    }
+
+    cout << "Количество различных цифр: " << unique_digits.size() << endl;
+
+    return 0;
+}
+// work 5 # 4.1

@@ -1,1 +1,71 @@
+// 1
+#include <iostream>
+using namespace std;
 
+int main() {
+	setlocale(0, "");
+	cout << "Введите три числа - стоимость основания спиннера, стоимость одной лопасти и максимальная стоимость всего спиннера:" << endl;
+	
+	int a, b, c;
+	if ((cin >> a && cin >> b && cin >> c) and(a!='.' && b != '.'&& c != '.'&& a!= ',' && b != ',' && c != ','))
+	{
+		if (a <= c) {
+			cout << (c - a) / b;
+		}
+		else {
+			cout << "Максимальная стоимость всего спинера не может быть меньше стоисмости основания спинера" << endl;
+		}
+		
+	}
+	else
+	{
+		cout << "Введите положительные целые числа";
+	}
+	return 0;
+}
+// 2
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	cout << "Введите количесвто лопастей" << endl;
+	int m;
+	if ((cin >> m) and (m != '.'  && m != ','))
+	{
+		int n4, n3;
+		n4 = m % 3;
+		n3 = (m - 4 * n4) / 3;
+		if (n3 >= 0)
+		{
+			cout << n3 << endl << n4;
+		}
+		else
+		{
+			cout << 0 << endl << 0;
+		}
+	}
+	else
+	{
+		cout << "Введите целое положительное число";
+	}
+	return 0;
+}
+// 3
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+		cout << "Введите 2 параметры листа" << endl;
+	int n, m;
+	if ((cin >> n && cin >> m)and(m != '.' && m != ',' && n!= '.' && n!= ','))
+	{
+		cout << n * (n + 1) / 2 * m * (m + 1) / 2;
+	}
+	else
+	{
+		cout << "Введите целые положительные числа";
+	}
+	return 0;
+}

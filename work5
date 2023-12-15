@@ -1,3 +1,4 @@
+// work 5#1
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -45,4 +46,165 @@ int main() {
 	first(a, b);
 	second(a, b);
 	return 0;
+}
+// work 5#2
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+
+void funct(int n, int m, int x[]) {
+	setlocale(LC_ALL, "rus");
+	if (m < n) {
+		if (x[m] != 0) {
+			int j = m * 2;
+			while (j < n) {
+				x[j] = 0;
+				j = j + m;
+			}
+			m += 1;
+			funct(n, m, x);
+		}
+		else {
+			m += 1;
+			funct(n, m, x);
+		}
+	}
+	else {
+		for (int i = 0; i < n - 1; i++) {
+			if (x[i] != 0 and x[i] != 1) {
+				cout << x[i] << endl;
+			}
+		}
+	}
+}
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	int n;
+	cout << "Введите число: ";
+	if (!(cin >> n) or n < 0) {
+		cout << "Ошибка" << endl;
+		return 0;
+	}
+	int a = n - 1;
+	int m = 2;
+	int* x = new int[a];
+	for (int i = 0; i < a; i++) {
+		x[i] = i;
+	}
+	funct(n, m, x);
+	return 0;
+}
+//work 5#3.21
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+
+int main() {
+    setlocale(LC_ALL, "rus");
+    std::string filename = "text.txt";
+    std::string line;
+    std::map<char, int> vowel_count;
+
+    // Создаем текстовый файл и записываем в него текст
+    std::ofstream write_file(filename);
+    write_file << "бббяяяббка." << std::endl;
+    write_file.close();
+
+    // Открываем созданный файл для чтения
+    std::ifstream read_file(filename);
+
+    // Ищем гласные буквы в тексте
+    while (std::getline(read_file, line)) {
+        for (char c : line) {
+            if (c == 'а' || c == 'о' || c == 'у' || c == 'э' || c == 'ы' || c == 'и' || c == 'ё' || c == 'е' || c == 'я' || c == 'ю') {
+                vowel_count[c]++;
+            }
+        }
+    }
+
+    read_file.close();
+
+    // Находим наиболее часто встречающуюся гласную букву
+    char most_common_vowel = ' '; // Инициализируем переменную most_common_vowel
+    int max_count = 0;
+    for (auto it : vowel_count) {
+        if (it.second > max_count) {
+            max_count = it.second;
+            most_common_vowel = it.first;
+        }
+    }
+
+    // Выводим результат
+    std::cout << "Наиболее часто встречающаяся гласная буква в тексте: " << most_common_vowel << std::endl;
+
+    return 0;
+}
+// work 5# 3.15
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "rus");
+    // Создаем и открываем файл для записи
+    ofstream file("text_file.txt");
+
+    // Проверяем, удалось ли открыть файл
+    if (file.is_open()) {
+        // Записываем текст в файл
+        file << "Roses are red, violets are blue, and I'm love you.";
+
+        // Закрываем файл
+        file.close();
+
+        // Пользователь вводит слово для поиска
+        string word_to_find;
+        cout << "Введите слово для поиска (На английском языке)";
+        cin >> word_to_find;
+
+        // Открываем файл для чтения
+        ifstream read_file("text_file.txt");
+        if (read_file.is_open()) {
+            string line;
+            int line_number = 1;
+            bool word_found = false;
+
+            int word_counter = 0;
+
+            // Ищем заданное слово в тексте
+            while (getline(read_file, line)) {
+                size_t pos = 0;
+                while ((pos = line.find(word_to_find, pos)) != string::npos) {
+                    word_counter++;
+                    pos += word_to_find.length();
+                }
+                line_number++;
+            }
+
+            // Если слово найдено, выводим количество найденных слов
+            if (word_counter > 0) {
+                cout << "Слово '" << word_to_find << "' найдено " << word_counter << " раз в тексте." << endl;
+                return 0;
+            }
+            else {
+                cout << "Слово не найдено в тексте" << endl;
+                return 0;
+            }
+
+            // Закрываем файл
+            read_file.close();
+            if (!file.is_open()) {
+
+                cout << "Не удалось открыть файл для чтения." << endl;
+            }
+            else {
+                cout << "Не удалось создать файл." << endl;
+            }
+
+            return 0;
+        }
+    }
 }

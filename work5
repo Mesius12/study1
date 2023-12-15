@@ -264,5 +264,36 @@ int main() {
 	cout << y << endl;
 	return 0;
 }
-work 5# 5.1
+// work 5# 5.41
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+int findShortestWordLength(const string& s) {
+    istringstream iss(s);
+    string word;
+    int shortestLength = INT_MAX;
+
+    while (iss >> word) {
+        int length = word.length();
+        if (length < shortestLength) {
+            shortestLength = length;
+        }
+    }
+
+    return shortestLength;
+}
+
+int main() {
+    string input;
+    cout << "Введите строку: ";
+    getline(cin, input);
+
+    int shortestLength = findShortestWordLength(input);
+    cout << "Длина самого короткого слова: " << shortestLength << endl;
+
+    return 0;
+}
+
 

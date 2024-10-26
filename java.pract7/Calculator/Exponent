@@ -1,0 +1,7 @@
+package Calculator;
+
+public class Exponent {
+    public static double POW(double start, double exp) {
+        return Math.pow(start, exp);
+    }
+}
